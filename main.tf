@@ -18,23 +18,23 @@ locals {
   subnetwork_type = "${var.create_secondary_ranges ? "secondary_range" : "normal"}"
 
   name_output = {
-    secondary_range = "${element(concat(google_compute_subnetwork.ranged.*.name, list("")), 0)}"
-    normal          = "${element(concat(google_compute_subnetwork.basic.*.name, list("")), 0)}"
+    secondary_range = "${element(concat(google_compute_subnetwork.ranged.*.name, tolist("")), 0)}"
+    normal          = "${element(concat(google_compute_subnetwork.basic.*.name, tolist("")), 0)}"
   }
 
   gateway_address_output = {
-    secondary_range = "${element(concat(google_compute_subnetwork.ranged.*.gateway_address, list("")), 0)}"
-    normal          = "${element(concat(google_compute_subnetwork.basic.*.gateway_address, list("")), 0)}"
+    secondary_range = "${element(concat(google_compute_subnetwork.ranged.*.gateway_address, tolist("")), 0)}"
+    normal          = "${element(concat(google_compute_subnetwork.basic.*.gateway_address, tolist("")), 0)}"
   }
 
   self_link_output = {
-    secondary_range = "${element(concat(google_compute_subnetwork.ranged.*.self_link, list("")), 0)}"
-    normal          = "${element(concat(google_compute_subnetwork.basic.*.self_link, list("")), 0)}"
+    secondary_range = "${element(concat(google_compute_subnetwork.ranged.*.self_link, tolist("")), 0)}"
+    normal          = "${element(concat(google_compute_subnetwork.basic.*.self_link, tolist("")), 0)}"
   }
 
   ip_cidr_range_output = {
-    secondary_range = "${element(concat(google_compute_subnetwork.ranged.*.ip_cidr_range, list("")), 0)}"
-    normal          = "${element(concat(google_compute_subnetwork.basic.*.ip_cidr_range, list("")), 0)}"
+    secondary_range = "${element(concat(google_compute_subnetwork.ranged.*.ip_cidr_range, tolist("")), 0)}"
+    normal          = "${element(concat(google_compute_subnetwork.basic.*.ip_cidr_range, tolist("")), 0)}"
   }
 
 
