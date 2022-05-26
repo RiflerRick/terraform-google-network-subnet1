@@ -18,8 +18,8 @@ locals {
   subnetwork_type = "${var.create_secondary_ranges ? "secondary_range" : "normal"}"
 
   name_output = {
-    secondary_range = "${element(concat(google_compute_subnetwork.ranged.*.name, tolist("")), 0)}"
-    normal          = "${element(concat(google_compute_subnetwork.basic.*.name, tolist("")), 0)}"
+    secondary_range = "${element(concat(google_compute_subnetwork.ranged.*.name, [""]), 0)}"
+    normal          = "${element(concat(google_compute_subnetwork.basic.*.name, [""]), 0)}"
   }
 
   gateway_address_output = {
