@@ -23,18 +23,18 @@ locals {
   }
 
   gateway_address_output = {
-    secondary_range = "${element(concat(google_compute_subnetwork.ranged.*.gateway_address, tolist("")), 0)}"
-    normal          = "${element(concat(google_compute_subnetwork.basic.*.gateway_address, tolist("")), 0)}"
+    secondary_range = "${element(concat(google_compute_subnetwork.ranged.*.gateway_address, [""]), 0)}"
+    normal          = "${element(concat(google_compute_subnetwork.basic.*.gateway_address, [""]), 0)}"
   }
 
   self_link_output = {
-    secondary_range = "${element(concat(google_compute_subnetwork.ranged.*.self_link, tolist("")), 0)}"
-    normal          = "${element(concat(google_compute_subnetwork.basic.*.self_link, tolist("")), 0)}"
+    secondary_range = "${element(concat(google_compute_subnetwork.ranged.*.self_link, [""]), 0)}"
+    normal          = "${element(concat(google_compute_subnetwork.basic.*.self_link, [""]), 0)}"
   }
 
   ip_cidr_range_output = {
-    secondary_range = "${element(concat(google_compute_subnetwork.ranged.*.ip_cidr_range, tolist("")), 0)}"
-    normal          = "${element(concat(google_compute_subnetwork.basic.*.ip_cidr_range, tolist("")), 0)}"
+    secondary_range = "${element(concat(google_compute_subnetwork.ranged.*.ip_cidr_range, [""]), 0)}"
+    normal          = "${element(concat(google_compute_subnetwork.basic.*.ip_cidr_range, [""]), 0)}"
   }
 
 
