@@ -40,3 +40,8 @@ variable "secondary_ranges" {
   default     = []
   description = "Create up to 5 alternative CIDR range to represent this subnetwork"
 }
+
+variable "project_id" {
+  type = string
+  description = "project that the subnet should belong to"
+}

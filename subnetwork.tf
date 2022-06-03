@@ -10,6 +10,7 @@ resource "google_compute_subnetwork" "basic" {
   ip_cidr_range            = "${var.ip_cidr_range}"
   network                  = "${var.network}"
   private_ip_google_access = true
+  project = "${var.project_id}"
 
 }
 
@@ -26,5 +27,6 @@ resource "google_compute_subnetwork" "ranged" {
   network                  = "${var.network}"
   secondary_ip_range       = "${var.secondary_ranges}"
   private_ip_google_access = true
+  project = "${var.project_id}"
 
 }
