@@ -22,7 +22,6 @@ variable "network" {
 variable "region" {
   type        = string
   description = "Region in which subnet will be created. Defaults to the region in the terraform provider"
-  default     = ""
 }
 
 variable "create_secondary_ranges" {
