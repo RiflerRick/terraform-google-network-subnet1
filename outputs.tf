@@ -26,3 +26,13 @@ output "secondary_range_cidrs" {
   value       = "${local.secondary_range_cidrs}"
   description = "List of CIDR blocks for the secondary ranges created."
 }
+
+output "subnetwork" {
+  value       = "${local.self_link}"
+  description = "The URI of the created resource."
+}
+
+output "region" {
+  value       = "${var.region}"
+  description = "The region of the subnet"
+}
