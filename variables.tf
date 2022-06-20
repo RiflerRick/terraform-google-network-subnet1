@@ -44,3 +44,8 @@ variable "project_id" {
   type = string
   description = "project that the subnet should belong to"
 }
+
+variable "subnet_create" {
+  default = true
+  description = "true if subnet needs to be created"
+}
