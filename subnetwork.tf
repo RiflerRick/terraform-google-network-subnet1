@@ -2,7 +2,7 @@
   Create subnetwork without secondary_range
  *****************************************/
 resource "google_compute_subnetwork" "basic" {
-  count = "${var.create_secondary_ranges ? 0 : 1}"
+  count = "${var.subnet_create ? var.create_secondary_ranges ? 0 : 1 : 0}"
 
   name                     = "${var.name}"
   description              = "${var.description != "" ? var.description : local.description}"
@@ -18,7 +18,7 @@ resource "google_compute_subnetwork" "basic" {
   Create subnetwork with secondary_range
  *****************************************/
 resource "google_compute_subnetwork" "ranged" {
-  count = "${var.create_secondary_ranges ? 1 : 0}"
+  count = "${var.subnet_create ? var.create_secondary_ranges ? 1 : 0 : 0}"
 
   name                     = "${var.name}"
   description              = "${var.description != "" ? var.description : local.description}"
